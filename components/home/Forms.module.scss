@@ -8,13 +8,19 @@
       padding: 2em;
       background-color: $color-light-1;
       border-radius: 4px;
-    .help {
+    .danger,.info {
       font-size: 0.8em;
-      color: red;
+    }
+    .danger{
+      color: red; 
+    }
+    .info{
+      color: $color-primary;
     }
     .flex {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       h2 {
         font-weight: bold;
       }
@@ -29,11 +35,11 @@
         margin-top: .5em;
         .input{
             width: 100%;
-            border: 1px solid $color-secondary;
+            border: 1px solid lightgray;
             padding: .25em .5em;
             border-radius: 4px;
             &:focus{
-                outline: 1px solid $color-primary;
+                outline: 2px solid $color-secondary;
             }
         }
     }

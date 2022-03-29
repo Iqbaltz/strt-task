@@ -1,9 +1,8 @@
 import styles from "./ButtonConnect.module.scss";
 import { useWeb3 } from "@3rdweb/hooks"
 
-type Props = {}
 
-export default function ButtonConnect({ }: Props) {
+export default function ButtonConnect() {
     const web3 = useWeb3()
 
     const { address, connectWallet, disconnectWallet } = web3
