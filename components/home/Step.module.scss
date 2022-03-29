@@ -1,0 +1,51 @@
+@import "styles/themes";
+
+.steps{
+    @include layout-container-lg;
+    @include layout-container-ver-lg;
+    
+    background-color: $color-light-2;
+    display: flex;
+    justify-content: space-between;
+    .step{
+        width: 24%;
+        display: flex;
+        .number{
+            width: 20%;
+            padding-right: 1em;
+            .wrapper{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 100px;
+                background-color: $color-light-1;
+            }
+        }
+        .content{
+            width: 80%;
+            color: $color-dark-3;
+            .title{
+                margin-bottom: .5em;
+            }
+            .caption{
+                font-size: .9em;
+            }
+        }
+        &.active{
+            .number{
+                .wrapper{
+                    background-color: $color-primary;
+                    color: $color-light-1;
+                }
+            }
+            .content{
+                .title{
+                    color: $color-dark-1;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

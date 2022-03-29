@@ -1,0 +1,9 @@
+@import "styles/themes";
+
+.btn{
+    font-weight: 500;
+    border-radius: 1em;
+    padding: .5em 1em;
+    color: $color-primary;
+    background-color: $color-secondary;
+}

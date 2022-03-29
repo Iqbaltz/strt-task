@@ -1,0 +1,49 @@
+@import "styles/themes";
+
+.wrapper {
+  @include layout-container-lg;
+  
+  background-color: $color-light-2;
+  .forms {
+      padding: 2em;
+      background-color: $color-light-1;
+      border-radius: 4px;
+    .help {
+      font-size: 0.8em;
+      color: red;
+    }
+    .flex {
+      display: flex;
+      justify-content: space-between;
+      h2 {
+        font-weight: bold;
+      }
+    }
+    .btnCreate,.btnSubmit {
+        background-color: $color-light-2;
+        border: 1px solid $color-dark-3;
+        padding: .25em .5em;
+        border-radius: 4px;
+      }
+    .control{
+        margin-top: .5em;
+        .input{
+            width: 100%;
+            border: 1px solid $color-secondary;
+            padding: .25em .5em;
+            border-radius: 4px;
+            &:focus{
+                outline: 1px solid $color-primary;
+            }
+        }
+    }
+    .centered{
+        text-align: center;
+        .disabled{
+            cursor: not-allowed;
+            background-color: $color-light-3;
+            opacity: .5;
+        }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import "styles/themes";
+
+.wrapper{
+    position: relative;
+    margin-right: 2em;
+    .btn{
+        background-color: $color-light-2;
+        padding: .5em 1em;
+        border-radius: 1em;
+        font-weight: 500;
+    }
+    
+    .dropdown{
+        text-align: left;
+        display: block;
+        position: absolute;
+        right: 0;
+        min-width: 240px;
+        top: 100%;
+        list-style: none;
+        background-color: $color-light-1;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, .3);
+        border-radius: 4px;
+        .item{
+            cursor: pointer;
+            padding: 1em;
+            &:hover{
+                background-color: $color-light-2;
+            }
+        }
+    }
+    
+    .close{
+        display: none;
+    }
+}
