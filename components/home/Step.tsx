@@ -4,11 +4,11 @@ import styles from "./Step.module.scss"
 type Props = {}
 
 export default function Step({ }: Props) {
-    const active = 0;
+    const active = 1;
     return (
         <div className={styles.steps}>
-            {stepContent.map(({ number, title, caption }, i) => (
-                <div {...cn(styles.step, active === i && styles.active)} key={i}>
+            {stepContent.map(({ number, title, caption }) => (
+                <div key={number} {...cn(styles.step, active === number && styles.active)}>
                     <div className={styles.number}>
                         <div className={styles.wrapper}>
                             {number}
