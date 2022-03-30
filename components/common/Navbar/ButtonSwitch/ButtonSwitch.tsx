@@ -2,37 +2,37 @@ import styles from "./ButtonSwitch.module.scss"
 import { useWeb3, useSwitchNetwork } from "@3rdweb/hooks"
 import { useState } from "react"
 
-const NetworkMetadata = (props: {
-    icon: React.ComponentType | string
-    chainName: string
-    symbol: string
-    isTestnet: boolean
-}) => {
-    const { chainName } = props
+// const NetworkMetadata = (props: {
+//     icon: React.ComponentType | string
+//     chainName: string
+//     symbol: string
+//     isTestnet: boolean
+// }) => {
+//     const { chainName } = props
 
-    if (!props || !chainName) {
-        return <></>
-    }
+//     if (!props || !chainName) {
+//         return <></>
+//     }
 
-    const { icon, isTestnet } = props
+//     const { icon, isTestnet } = props
 
-    const ChainIconElement = icon
+//     const ChainIconElement = icon
 
-    return (
-        <>
-            {chainName}
-            {/* <div>
-          <ChainIconElement />
-        </div>
-        <p>{chainName}</p>
-        hell */}
-            {isTestnet && <p>(testnet)</p>}
-        </>
-    )
-}
+//     return (
+//         <>
+//             {chainName}
+//             {/* <div>
+//           <ChainIconElement />
+//         </div>
+//         <p>{chainName}</p>
+//         hell */}
+//             {isTestnet && <p>(testnet)</p>}
+//         </>
+//     )
+// }
 
 
-export default function ButtonSwitch(props: {}) {
+export default function ButtonSwitch() {
     const [openDropdown, setOpenDropdown] = useState(false)
     const web3 = useWeb3()
 
@@ -50,14 +50,17 @@ export default function ButtonSwitch(props: {}) {
 
     if (chainId) {
         networkMetadata = getNetworkMetadata(chainId)
+        if(chainId == 97){
+            networkMetadata.chainName = "BSC Testnet"
+        }
     }
 
     return (
         <div className={styles.wrapper}>
-            <button className={styles.btn} onClick={() => setOpenDropdown(!openDropdown)}>Switch Network</button>
+            <button className={styles.btn} onClick={() => setOpenDropdown(!openDropdown)}>{networkMetadata? networkMetadata.chainName : "Switch Network"}</button>
             <ul className={openDropdown ? styles.dropdown : styles.close}>
                 <li className={styles.item} onClick={() => handleSwitchNetwork(80001)}>
-                    Switch to Polygon Mumbai
+                    Switch to Polygon Mumbai (Testnet)
                 </li>
                 <li className={styles.item} onClick={() => handleSwitchNetwork(97)}>
                     Switch to BSC Testnet
