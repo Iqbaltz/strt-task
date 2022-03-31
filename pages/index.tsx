@@ -1,13 +1,11 @@
 import type { NextPage } from 'next'
 import Layout from '../components/common/Layout';
-import Step from '../components/home/Step';
-import Forms from '../components/home/Forms';
+import LaunchpadForms from '../components/launchpad/LaunchpadForms';
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Step />
-      <Forms />
+      <LaunchpadForms />
     </Layout>
   )
 }

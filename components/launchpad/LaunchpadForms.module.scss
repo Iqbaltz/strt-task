@@ -1,0 +1,12 @@
+@import "styles/themes";
+
+.body{
+    @include layout-container-lg;
+    background-color: $color-light-2;
+    .wrapper{
+        padding: 2em;
+        background-color: $color-light-1;
+        border-radius: 4px;
+        margin-bottom: 2em;
+    }
+}

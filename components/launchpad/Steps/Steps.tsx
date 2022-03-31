@@ -1,14 +1,13 @@
-import cn from "../../libs/utils/cn"
-import styles from "./Step.module.scss"
+import cn from "../../../libs/utils/cn"
+import styles from "./Steps.module.scss"
 
-type Props = {}
+type Props = {step: any}
 
-export default function Step({ }: Props) {
-    const active = 1;
+export default function Steps({ step }: Props) {
     return (
         <div className={styles.steps}>
-            {stepContent.map(({ number, title, caption }) => (
-                <div key={number} {...cn(styles.step, active === number && styles.active)}>
+            {stepContent.map(({ number, title, caption }, i) => (
+                <div key={number} {...cn(styles.step, step === i && styles.active)}>
                     <div className={styles.number}>
                         <div className={styles.wrapper}>
                             {number}

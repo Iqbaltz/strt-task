@@ -50,7 +50,7 @@ export default function ButtonSwitch() {
 
     if (chainId) {
         networkMetadata = getNetworkMetadata(chainId)
-        if(chainId == 97){
+        if(chainId == 97){ //cannot get data from BSC net but can connect
             networkMetadata.chainName = "BSC Testnet"
         }
     }

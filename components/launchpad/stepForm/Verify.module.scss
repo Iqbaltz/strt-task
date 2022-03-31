@@ -1,13 +1,6 @@
 @import "styles/themes";
 
-.wrapper {
-  @include layout-container-lg;
-  
-  background-color: $color-light-2;
-  .forms {
-      padding: 2em;
-      background-color: $color-light-1;
-      border-radius: 4px;
+  .form {
     .danger,.info {
       font-size: 0.8em;
     }
@@ -51,5 +44,13 @@
             opacity: .5;
         }
     }
+    .preview{
+      margin-bottom: 1em;
+      .col{
+        display: flex;
+        justify-content: space-between;
+        padding: .5em 0;
+        border-bottom: 1px solid $color-light-2;
+      }
+    }
   }
-}
