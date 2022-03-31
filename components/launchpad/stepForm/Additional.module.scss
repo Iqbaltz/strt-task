@@ -1,1 +1,56 @@
-@import "styles/themes"
+@import "styles/themes";
+
+  .form {
+    .danger {
+      font-size: 0.8em;
+    }
+    .danger{
+      color: red; 
+    }
+    .field{
+        margin: .5em 0 1em;
+        width: 100%;
+        .input{
+            width: 100%;
+            border: 1px solid lightgray;
+            padding: .25em .5em;
+            border-radius: 4px;
+            &:focus{
+                outline: 2px solid $color-secondary;
+            }
+        }
+        .choices{
+            label{
+                margin-right: 1em;
+            }
+        }
+    }
+    .flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5em;
+      h2 {
+        font-weight: bold;
+      }
+    }
+    
+    .btnPrev, .btnNext {
+        background-color: $color-light-2;
+        border: 1px solid $color-dark-3;
+        padding: .25em .5em;
+        border-radius: 4px;
+      }
+
+    .btnPrev{
+        margin-right: 1em;
+    }
+    .centered{
+        text-align: center;
+        .disabled{
+            cursor: not-allowed;
+            background-color: $color-light-3;
+            opacity: .5;
+        }
+    }
+  }

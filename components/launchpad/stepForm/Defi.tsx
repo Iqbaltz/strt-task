@@ -3,7 +3,7 @@ import cn from "../../../libs/utils/cn";
 
 type Props = { formData: any,setFormData: any, step: any, setStep: any }
 
-export default function Defi({formData,step, setStep, setFormData  }: Props) {
+export default function Defi({formData,step, setStep, setFormData}: Props) {
 
   const isFormFilled = () => {
     const { presaleRate, listingRate, softcap, hardcap, refundType, minBuy, maxBuy, liquidity, startTime, endTime, liquidityLockup } = formData
@@ -50,13 +50,13 @@ export default function Defi({formData,step, setStep, setFormData  }: Props) {
           <label htmlFor="refundType">Refund type</label>
           <select name="refundType" id="refundType" value={formData.refundType} onChange={(e) => setFormData({...formData, refundType: e.target.value})} className={styles.input}>
             <option value="refund">Refund</option>
-            <option value="burn" selected>Burn</option>
+            <option value="burn">Burn</option>
           </select>
         </div>
         <div className={styles.field} >
           <label htmlFor="router">Router<span className={styles.danger}>*</span></label>
           <select name="router" id="router" value={formData.router} onChange={(e) => setFormData({...formData, router: e.target.value})} className={styles.input}>
-            <option value="pancakeswap" selected>Pancakeswap</option>
+            <option value="pancakeswap">Pancakeswap</option>
             <option value="pinkswaptestnet">Pinkswap Testnet</option>
           </select>
         </div>

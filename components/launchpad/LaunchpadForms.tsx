@@ -4,6 +4,7 @@ import Steps from "./Steps/Steps"
 import { useState } from "react"
 import Defi from "./stepForm/Defi"
 import Additional from "./stepForm/Additional"
+import Finish from "./stepForm/Finish"
 
 
 type Props = {}
@@ -16,13 +17,15 @@ export default function LaunchpadForms({ }: Props) {
     hardcap: "",
     minBuy: "",
     maxBuy: "",
-    refundType: "",
-    router: "",
+    refundType: "refund",
+    router: "pancakeswap",
     liquidity: "",
     listingRate: "",
     startTime: "",
     endTime: "",
-    liquidityLockup: ""
+    liquidityLockup: "",
+    logoUrl: "",
+    website: ""
   })
 
   return (
@@ -33,8 +36,9 @@ export default function LaunchpadForms({ }: Props) {
           {
             step < 1 ? <Verify formData={formData} step={step} setFormData={setFormData} setStep={setStep} />
           : step < 2? <Defi formData={formData} step={step} setFormData={setFormData} setStep={setStep} />
-          : <Additional />
-          }
+          : step < 3? <Additional formData={formData} step={step} setFormData={setFormData} setStep={setStep} />
+          : <Finish formData={formData} step={step} setStep={setStep} />
+        }
         </div>
       </div>
     </>

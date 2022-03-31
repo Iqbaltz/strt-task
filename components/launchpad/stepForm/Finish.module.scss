@@ -1,1 +1,35 @@
-@import "styles/themes"
+@import "styles/themes";
+
+.preview {
+  margin-bottom: 1em;
+  .col {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 0;
+    border-bottom: 1px solid $color-light-2;
+    .val {
+      color: $color-primary;
+    }
+  }
+  .btnPrev {
+    background-color: $color-light-2;
+    border: 1px solid $color-dark-3;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+  }
+  .btnSubmit{
+    color: $color-light-1;
+    background-color: $color-primary;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+  }
+
+  .btnPrev {
+    margin-right: 1em;
+  }
+
+
+  .centered {
+    text-align: center;
+  }
+}
