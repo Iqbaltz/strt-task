@@ -4,7 +4,6 @@ import cn from "../../../libs/utils/cn";
 type Props = { formData: any, setFormData: any, step: any, setStep: any }
 
 export default function Additional({ formData, step, setStep, setFormData }: Props) {
-  console.log(formData)
 
   const isFormFilled = () =>{
     const { logoUrl, website } = formData
