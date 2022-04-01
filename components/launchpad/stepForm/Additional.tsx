@@ -1,9 +1,12 @@
 import styles from "./Additional.module.scss"
-import cn from "../../../libs/utils/cn";
+import cn from "@/libs/utils/cn";
+import { useContext } from "react";
+import {FormContext} from "@/libs/context/FormContext"
 
-type Props = { formData: any, setFormData: any, step: any, setStep: any }
+type Props = { step: any, setStep: any }
 
-export default function Additional({ formData, step, setStep, setFormData }: Props) {
+export default function Additional({ step, setStep }: Props) {
+  const {formData, setFormData} = useContext(FormContext)
 
   const isFormFilled = () =>{
     const { logoUrl, website } = formData

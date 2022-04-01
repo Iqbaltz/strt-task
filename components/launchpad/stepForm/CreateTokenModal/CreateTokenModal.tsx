@@ -1,14 +1,13 @@
-import cn from "../../../../libs/utils/cn"
+import cn from "@/libs/utils/cn"
 import styles from "./CreateTokenModal.module.scss"
 import {useState} from 'react'
 
 type Props = {
     setOpen: any,
     setFormData: any,
-    setAddress: any,
     formData: any
 };
-export default function CreateTokenModal({formData, setAddress, setOpen, setFormData }: Props) {
+export default function CreateTokenModal({formData, setOpen, setFormData }: Props) {
     const [tokenData, setTokenData] = useState({
         name: "",
         symbol: "",
@@ -22,8 +21,7 @@ export default function CreateTokenModal({formData, setAddress, setOpen, setForm
 
     const handleSubmit = (e: any) => {
         e.preventDefault()
-        setAddress("dummyaddress123")
-        setFormData({...formData, ...tokenData})
+        setFormData({...formData, ...tokenData, address: "dummyaddress123"})
         setOpen(false)
     }
 

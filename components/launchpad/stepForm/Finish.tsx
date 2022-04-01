@@ -1,8 +1,12 @@
 import styles from "./Finish.module.scss"
+import { useContext } from "react"
+import {FormContext} from "@/libs/context/FormContext"
 
-type Props = { formData: any, step: any, setStep: any }
+type Props = { step: any, setStep: any }
 
-export default function Finish({ formData, step, setStep }: Props) {
+export default function Finish({ step, setStep }: Props) {
+  const {formData} = useContext(FormContext)
+
   return (
     <div className={styles.preview}>
       <div className={styles.col}>

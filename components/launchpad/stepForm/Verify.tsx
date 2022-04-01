@@ -1,18 +1,20 @@
 import styles from "./Verify.module.scss"
-import { useState } from "react";
-import cn from "../../../libs/utils/cn";
+import { useState, useContext } from "react";
+import cn from "@/libs/utils/cn";
 import CreateTokenModal from "./CreateTokenModal/CreateTokenModal";
+import {FormContext } from "@/libs/context/FormContext"
 
-type Props = { formData: any,setFormData: any, step: any, setStep: any }
 
-export default function Verify({ formData,step, setStep, setFormData }: Props) {
-    const [address, setAddress] = useState("")
+type Props = { step: any, setStep: any }
+
+export default function Verify({ step, setStep }: Props) {
     const [errMsg, setErrMsg] = useState("")
     const [openModal, setOpenModal] = useState(false)
+    const {formData, setFormData} = useContext(FormContext)
 
     const handleInput = (e: any) => {
         const value = e.target.value
-        setAddress(value)
+        setFormData({...formData, address: value})
         value.length > 0 ? setErrMsg("Invalid token address") : setErrMsg("Token address cannot be blank")
     }
 
@@ -32,7 +34,7 @@ export default function Verify({ formData,step, setStep, setFormData }: Props) {
                     </button>
                 </div>
                 <div className={styles.control}>
-                    <input type="text" value={address} onChange={handleInput} className={styles.input} />
+                    <input type="text" value={formData.address} onChange={handleInput} className={styles.input} />
                     <p className={styles.info}>Create pool fee: 1 BNB</p>
                     <p className={styles.danger}>{errMsg}</p>
                 </div>
@@ -47,10 +49,10 @@ export default function Verify({ formData,step, setStep, setFormData }: Props) {
                     </div>
                 }
                 <div className={styles.centered}>
-                    <button disabled={!isFormFilled()} type="button" onClick={() => setStep(step+=1)} {...cn(styles.btnSubmit, !isFormFilled() && styles.disabled)}>Next</button>
+                    <button disabled={!isFormFilled()} type="button" onClick={() => setStep(step+1)} {...cn(styles.btnSubmit, !isFormFilled() && styles.disabled)}>Next</button>
                 </div>
             </form>
-            {openModal && <CreateTokenModal formData={formData} setAddress={setAddress} setFormData={setFormData} setOpen={setOpenModal} />}
+            {openModal && <CreateTokenModal formData={formData} setFormData={setFormData} setOpen={setOpenModal} />}
         </>
     )
 }

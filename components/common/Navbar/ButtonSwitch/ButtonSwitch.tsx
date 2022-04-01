@@ -3,7 +3,7 @@ import { useWeb3, useSwitchNetwork } from "@3rdweb/hooks"
 import { useState } from "react"
 
 // const NetworkMetadata = (props: {
-//     icon: React.ComponentType | string
+//     iconUrl: React.ComponentType | string
 //     chainName: string
 //     symbol: string
 //     isTestnet: boolean
@@ -14,18 +14,17 @@ import { useState } from "react"
 //         return <></>
 //     }
 
-//     const { icon, isTestnet } = props
+//     const { iconUrl, isTestnet } = props
 
-//     const ChainIconElement = icon
+//     const ChainIconElement = iconUrl
 
 //     return (
 //         <>
 //             {chainName}
-//             {/* <div>
+//             <div>
 //           <ChainIconElement />
 //         </div>
 //         <p>{chainName}</p>
-//         hell */}
 //             {isTestnet && <p>(testnet)</p>}
 //         </>
 //     )
@@ -57,7 +56,9 @@ export default function ButtonSwitch() {
 
     return (
         <div className={styles.wrapper}>
-            <button className={styles.btn} onClick={() => setOpenDropdown(!openDropdown)}>{networkMetadata? networkMetadata.chainName : "Switch Network"}</button>
+            <button className={styles.btn} onClick={() => setOpenDropdown(!openDropdown)}>
+                {networkMetadata? networkMetadata.chainName : "Switch Network"}
+                </button>
             <ul className={openDropdown ? styles.dropdown : styles.close}>
                 <li className={styles.item} onClick={() => handleSwitchNetwork(80001)}>
                     Switch to Polygon Mumbai (Testnet)
